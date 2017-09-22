@@ -54,21 +54,12 @@ def index():
 
 @app.route("/", methods=['POST'])
 def encrypt():
+    message = ''
     rotate_by = request.form['rot']
-    
-    if rotate_by.isdigit:
-        #return rotate_by
-        return rotate_by.isdigit()
-    
-    else:
-        return "{rotate_by} is not a number!".format(rotate_by=rotate_by)
-        
-
-
     text = request.form['text']
     for char in text:
         if char.isalpha():
-            message += rotate_character(char, rot)
+            message += rotate_character(char, rotate_by)
         else:
             message += char
        
